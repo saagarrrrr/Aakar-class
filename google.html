@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png" type="image/x-icon">
+    <title>Google</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        color: rgb(2, 2, 2);
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 10px;
+        width: 100%;
+      }
+      main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      img {
+        width: 400px;
+        height: auto;
+
+      }
+
+
+      
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding: 20px;
+        background-color: rgb(239, 239, 239);
+      }
+      .bottomLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .left,
+      .right {
+        display: flex;
+        gap: 40px;
+      }
+      .searchBar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgb(0, 0, 0);
+        padding: 16px 32px;
+        border-radius: 999px;
+      }
+      input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: rgb(0, 0, 0);
+        width: 700px;
+        font-size: medium;
+        text-align: center;
+        
+
+      }
+      input::placeholder{
+        color: rgb(39, 37, 37);
+        
+  
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#">Email</a>
+      <a href="#">image</a>
+
+    </header>
+
+    <main>
+      
+        <img src="https://cdn.logojoy.com/wp-content/uploads/20230801145608/Current-Google-logo-2015-2023-600x203.png" alt="" />
+        <div class="searchBar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="search google or " />
+    
+        </div>
+
+    </main>
+
+    <footer>
+      <div class="country">Nepal</div>
+      <hr />
+      <div class="bottomLinks">
+        <div class="left">
+          <a href="">About</a>
+          <a href="">Advertising</a>
+          <a href="">Business</a>
+          <a href="">How Search works</a>
+        </div>
+        <div class="right">
+          <a href="">Privacy</a>
+          <a href="">Terms</a>
+          <a href="">Settings</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

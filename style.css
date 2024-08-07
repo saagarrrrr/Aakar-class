@@ -1,0 +1,15 @@
+h3 {
+    background-color: #0d6b72;
+}
+label {
+    color: #00ff80;
+}
+option {
+    color: hsl(127, 47%, 54%);
+}
+select {
+    color: crimson;
+}
+body {
+    background-color: rgb(158, 94, 214);
+}
