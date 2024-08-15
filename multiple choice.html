@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Question</title>
+    <style>
+        body {
+    font-family: sans-serif;
+    padding: 1rem;
+    background-color: rgb(198, 185, 45);
+}
+        
+        .question {
+            margin-bottom: 15px;
+        }
+        .choices {
+            margin-bottom: 20px;
+            margin-bottom: 5px;
+    
+        }
+        
+        p:hover,r {
+          background-color: rgb(91, 131, 132);
+        }
+
+    button{
+        background-color: rgb(149, 229, 117);
+    }
+    label:hover, h2:hover{
+        background-color: rgb(151, 138, 138);
+    }
+    button:hover{
+        background-color: red;
+    }
+
+    
+    </style>
+
+
+</head>
+<body>
+
+    <h2>Multiple Choice Question</h2>
+
+    <div class="question">
+        <p>What is your father put is your name?</p>
+    </div>
+
+    <div class="choices">
+        <label>
+            <input type="radio" name="answer" value=""> Ram
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value=""> Shyam
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value=""> Pari
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value=""> Sunny
+        </label>
+    </div>
+
+    <button onclick="checkAnswer()">Submit</button>
+    </body>
+    </html>
