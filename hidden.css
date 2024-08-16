@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: rgb(124, 164, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.search{
+    border-radius: 10px;
+    position: relative;
+
+}
+#searchbar{
+height: 50px;
+width: 50px;
+outline: none;
+font-size: 20px;
+width: 50px;
+border-radius: 40px;
+padding-left: 20px;
+transition: width 0.5s  ease;
+border: 1px solid white;
+
+}
+.active{
+    width: 300px !important;
+}
+button{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    border-radius: 40px;
+    top: 0;
+    right: 0;
+    border: 1px solid black;
+
+}
