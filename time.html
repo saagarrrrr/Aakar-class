@@ -1,50 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital Clock</title>
     <style>
-          body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url(https://t4.ftcdn.net/jpg/08/43/24/45/240_F_843244575_klWXzyM6MkVLP2J6ODYyXi9g09qjRK2e.jpg);
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-}
+      /* General Body Styles */
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: "Arial", sans-serif;
+      }
 
-.clock {
-    font-size: 5em;
-    text-align: center;
-}
+      /* Clock Container */
+      .clock-container {
+        text-align: center;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
 
+      /* Clock Styles */
+      .clock {
+        font-size: 5em;
+        color: #ffffff;
+        letter-spacing: 5px;
+      }
+
+      /* Time Digit Styles */
+      .time {
+        display: inline-block;
+        animation: fade-in 1s ease-in-out infinite alternate;
+      }
+
+      /* Animation for Smooth Digit Changes */
+      @keyframes fade-in {
+        0% {
+          opacity: 0.5;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Styling for the AM/PM Indicator */
+      #period {
+        font-size: 0.5em;
+        vertical-align: super;
+        margin-left: 10px;
+      }
     </style>
-</head>
-<body>
-    <div class="clock">
-        <div id="hours" class="time"></div> :
-        <div id="minutes" class="time"></div> :
-        <div id="seconds" class="time"></div>
-    </div>
-
+  </head>
+  <body>
+    <div class="clock-container">
+        <div class="clock">
+            <span id="hours" class="time"></span> :
+            <span id="minutes" class="time"></span> :
+            <span id="seconds" class="time"></span>
+            <span id="period" class="time"></span>
+        </div>
+        </div>
     <script>
-       function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
+      function updateClock() {
+          const now = new Date();
+          let hours = now.getHours();
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const period = hours >= 12 ? 'PM' : 'AM';
 
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
-    document.getElementById('seconds').textContent = seconds;
-}
+        //   // Convert to 12-hour format
+        //   hours = hours % 12 || 12;
+        //   hours = String(hours).padStart(2, '0');
 
-setInterval(updateClock, 1000);
-updateClock();
+          document.getElementById('hours').textContent = hours;
+          document.getElementById('minutes').textContent = minutes;
+          document.getElementById('seconds').textContent = seconds;
+          document.getElementById('period').textContent = period;
+      }
+    //   const time = new Date();
+    //   const clock = document.getElementById("clock");
+    //   const hr = document.getElementById("hr");
+    //   const min = document.getElementById("min");
+    //   const sec = document.getElementById("sec");
+    //   var hour = time.getHours();
+    //   var minutes = time.getMinutes();
+    //   var seconds = time.getSeconds();
+    //   hr.innerHTML = hour + " : ";
+    //   min.innerHTML = " " + minutes + " : ";
+    //   sec.innerHTML = " " + seconds;
+    //   const numbers = document.querySelector(".numbers");
+    //   const numbers = document.querySelector(".numbers");
 
+    //   function numSum() {
+    //     seconds++;
+    //     if (seconds > 59) {
+    //       seconds = 0;
+    //       minutes++;
+    //       if (minutes > 59) {
+    //         hour++;
+    //       }
+    //     }
+    //     sec.innerHTML = " " + seconds;
+    //     min.innerHTML = " " + minutes + " : ";
+    //   }
+      setInterval(updateClock, 1000);
+      updateClock();
     </script>
-</body>
+  </body>
 </html>
