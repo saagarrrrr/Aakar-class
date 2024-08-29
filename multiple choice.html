@@ -1,67 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multiple Choice Question</title>
     <style>
-        body {
-    font-family: sans-serif;
-    padding: 1rem;
-    background-color: rgb(198, 185, 45);
-}
-        
-        .question {
-            margin-bottom: 15px;
-        }
-        .choices {
-            margin-bottom: 20px;
-            margin-bottom: 5px;
-    
-        }
-        
-        p:hover,r {
-          background-color: rgb(91, 131, 132);
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: rgb(12, 12, 12);
+        background-image: url(https://e1.pxfuel.com/desktop-wallpaper/626/565/desktop-wallpaper-quiz-trivia-thumbnail.jpg);
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 600px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 5px dashed rgb(255, 255, 255);
+        margin-bottom: 20px;
+      }
+      #question {
+        font-size: 30px;
+        font-weight: 400;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        background-color: rgb(160, 101, 185);
+        padding: 15px;
+        border-radius: 20px;
+      }
+      .quizz-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 17px;
+        width: 100%;
+      }
+      #question {
+        text-align: start;
+        width: 100%;
+      }
+      #ans-ko-container {
+        display: flex;
+        flex-direction: column;
+        padding-block: 20px;
+        gap: 20px;
+        width: 100%;
 
-    button{
-        background-color: rgb(149, 229, 117);
-    }
-    label:hover, h2:hover{
-        background-color: rgb(151, 138, 138);
-    }
-    button:hover{
-        background-color: red;
-    }
+      }
+      .ansbt {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 400;
+        padding: 16px 32px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid rgb(188, 188, 188);
+        transition: all 0.3s;
+      }
+      .ansbt:hover:not([disabled]) {
+        background-color: rgb(222, 222, 222);
+        color: rgb(0, 0, 0);
+      }
+      .anstn:disabled {
+        cursor: no-drop;
+      }
 
-    
+      #nxt-btn {
+        padding: 16px 40px;
+        font-size: 20px;
+        background-color: rgb(116, 0, 198);
+        border: 1px solid rgb(19, 20, 19);
+        border-radius: 12px;
+        color: aliceblue;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      #nxt-btnt:hover {
+        background-color: rgb(24, 31, 3);
+        border: 1px solid rgb(135, 135, 135);
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      #footer {
+        font-size: 14px;
+        font-weight: 400px;
+        color: rgb(16, 15, 15);
+      }
+      .correct {
+        background-color: rgb(2, 119, 2);
+        color: aliceblue;
+      }
+      .incorrect {
+        background-color: rgb(125, 0, 0);
+        color: aliceblue;
+      }
     </style>
+  </head>
+  <body>
+    <body>
+      <section class="body">
+        <div class="container">
+          <h1 class="title">Quizzzz Game</h1>
+          <div class="quizz-container">
 
+            <h2 id="question">Question Here</h2>
+            <div id="ans-ko-container">
 
-</head>
-<body>
-
-    <h2>Multiple Choice Question</h2>
-
-    <div class="question">
-        <p>What is your father put is your name?</p>
-    </div>
-
-    <div class="choices">
-        <label>
-            <input type="radio" name="answer" value=""> Ram
-        </label><br>
-        <label>
-            <input type="radio" name="answer" value=""> Shyam
-        </label><br>
-        <label>
-            <input type="radio" name="answer" value=""> Pari
-        </label><br>
-        <label>
-            <input type="radio" name="answer" value=""> Sunny
-        </label>
-    </div>
+              <button class="ansbt">ans</button>
+              <button class="ansbt">ans</button>
+              <button class="ansbt">ans</button>
+              <button class="ansbt">ans</button>
+            </div>
+            <button id="nxt-btn">Next</button>
+            <div class="questios-status">
+              <h6 id="footer">1 of 10 questions</h6>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="multiple.js"></script>
+    </body>
 
     <button onclick="checkAnswer()">Submit</button>
-    </body>
-    </html>
+  </body>
+</html>
